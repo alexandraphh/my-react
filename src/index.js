@@ -1,29 +1,34 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.scss';
-import Home from './components/home';
+import {
+  Col,
+  Row,
+  Navbar,
+  Nav,
+  Form,
+  FormControl,
+  Button,
+} from 'react-bootstrap';
 
-const datas = [{
-  id: '12345',
-  name: 'greg',
-  phone: '0123433443',
-}, {
-  id: '1234',
-  name: 'taurouf',
-  phone: '07070707',
-}, {
-  id: '123',
-  name: 'gjut',
-  phone: '0808080808',
-},
-];
-
-const App = () => (
-  <div>
-    <ul>
-      {datas.map((item) => <Home data={item} />)}
-    </ul>
-  </div>
+const NavBar = () => (
+  <Row>
+    <Col>
+      <Navbar bg="dark" variant="dark">
+        <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+        <Nav className="mr-auto">
+          <Nav.Link href="#home">Home</Nav.Link>
+          <Nav.Link href="#features">Features</Nav.Link>
+          <Nav.Link href="#pricing">Pricing</Nav.Link>
+          <Nav.Link href="#pricing">Pricing</Nav.Link>
+          <Nav.Link href="#pricing">Pricing</Nav.Link>
+          <Nav.Link href="#pricing">Pricing</Nav.Link>
+        </Nav>
+        <Form inline>
+          <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+          <Button variant="outline-info">Search</Button>
+        </Form>
+      </Navbar>
+    </Col>
+  </Row>
 );
 
-ReactDOM.render(<App />, document.getElementById('app'));
+export default NavBar;
